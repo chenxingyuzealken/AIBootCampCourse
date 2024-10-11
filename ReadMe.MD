@@ -14,7 +14,7 @@ Before you can run the application, make sure you have the following in place:
 1. **Clone the repository** to your local machine:
 
     ```bash
-    git clone <your-repo-url>
+    git clone chenxingyuzealken/AIBootCampCourse
     cd <your-repo-directory>
     ```
 

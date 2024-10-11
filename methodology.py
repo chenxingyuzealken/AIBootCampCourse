@@ -4,7 +4,7 @@ def methodology():
     st.title("Methodology")
 
     st.write("""Overall Flowchart""")
-    st.image(r"D:\AiCourse\assets\overall.drawio.png", caption="Flowchart Example", use_column_width=True)
+    st.image(r"assets\overall.drawio.png", caption="Flowchart Example", use_column_width=True)
 
 
     with st.expander("Data Flow 1: Scraping CPF Website Information (Admin-Only)"):
@@ -26,7 +26,7 @@ def methodology():
         
         """)
 
-        st.image(r"D:\AiCourse\assets\Flow1.drawio.png", caption="Flowchart Example", use_column_width=True)
+        st.image(r"assets\Flow1.drawio.png", caption="Flowchart Example", use_column_width=True)
 
         st.write("""
         **Data Sources:**
@@ -75,7 +75,7 @@ def methodology():
         
         """)
 
-        st.image(r"D:\AiCourse\assets\Flow2.drawio.png", caption="Flowchart Example", use_column_width=True)
+        st.image(r"assets\Flow2.drawio.png", caption="Flowchart Example", use_column_width=True)
 
         st.write("""
         **Technical Implementation:**
@@ -119,7 +119,7 @@ def methodology():
         - User submits query → Validate query + Ensure safeguards against prompt injection → GraphRAG the graph database → Search web as fallback 
         """)
 
-        st.image(r"D:\AiCourse\assets\Flow3.drawio.png", caption="Flowchart Example", use_column_width=True)
+        st.image(r"assets\Flow3.drawio.png", caption="Flowchart Example", use_column_width=True)
 
         st.write("""
         **Security Considerations:**
@@ -164,7 +164,7 @@ def methodology():
         - User inputs retirement details → Process data with CPF and household expenditure policies → Compare projections to average household expenditure → Estimate retirement adequacy → Display results
         """)
 
-        st.image(r"D:\AiCourse\assets\Flow4.drawio.png", caption="Flowchart Example", use_column_width=True)
+        st.image(r"assets\Flow4.drawio.png", caption="Flowchart Example", use_column_width=True)
 
         st.write("""
         **Technical Implementation:**

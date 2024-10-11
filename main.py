@@ -10,7 +10,6 @@ from utility import check_password
 if not check_password():  
     st.stop()
 
-
 # Define a function for the Home page
 def home():
     st.title("Home")

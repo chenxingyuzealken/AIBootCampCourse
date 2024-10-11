@@ -7,8 +7,7 @@ import hmac
 # This file contains the common components used in the Streamlit App.  
 # This includes the sidebar, the title, the footer, and the password check.  
 # """  
-  
-  
+   
 def check_password():  
     """Returns `True` if the user had the correct password."""  
     def password_entered():  
@@ -28,3 +27,4 @@ def check_password():
     if "password_correct" in st.session_state:  
         st.error("😕 Password incorrect")  
     return False
+

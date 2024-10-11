@@ -4,7 +4,15 @@ from llm.search import perform_search
 from knowledge_graph.KG_query import query_kg_db
 import os
 
-
+#for deployment in streamlit cloud
+st.write(os.environ['OPENAI_API_KEY'] == st.secrets['OPENAI_API_KEY'],
+    os.environ['TAVILY_API_KEY'] == st.secrets['TAVILY_API_KEY'],
+    os.environ['NEO4J_URI'] == st.secrets['NEO4J_URI'],
+    os.environ['NEO4J_USERNAME'] == st.secrets['NEO4J_USERNAME'],
+    os.environ['NEO4J_PASSWORD'] == st.secrets['NEO4J_PASSWORD'],
+    os.environ['AURA_INSTANCEID'] == st.secrets['AURA_INSTANCEID'],
+    os.environ['AURA_INSTANCENAME'] == st.secrets['AURA_INSTANCENAME'],
+    )
 
 
 def retirement_policy_explainer(query):
@@ -35,16 +43,6 @@ def retirement_policy_explainer(query):
 def policy_explainer():
     st.title("Retirement Policy Explainer")
     st.write("Ask about policies related to CPF and retirement")
-
-    #for deployment in streamlit cloud
-    st.write(os.environ['OPENAI_API_KEY'] == st.secrets['OPENAI_API_KEY'],
-        os.environ['TAVILY_API_KEY'] == st.secrets['TAVILY_API_KEY'],
-        os.environ['NEO4J_URI'] == st.secrets['NEO4J_URI'],
-        os.environ['NEO4J_USERNAME'] == st.secrets['NEO4J_USERNAME'],
-        os.environ['NEO4J_PASSWORD'] == st.secrets['NEO4J_PASSWORD'],
-        os.environ['AURA_INSTANCEID'] == st.secrets['AURA_INSTANCEID'],
-        os.environ['AURA_INSTANCENAME'] == st.secrets['AURA_INSTANCENAME'],
-        )
 
     # User input
     query = st.text_input("Enter your query about retirement policies:", "")

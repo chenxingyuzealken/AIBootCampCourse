@@ -9,20 +9,6 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 
-import os
-import streamlit as st
-#for deployment in streamlit cloud
-    #for deployment in streamlit cloud
-st.write(os.environ['OPENAI_API_KEY'] == st.secrets['OPENAI_API_KEY'],
-    os.environ['TAVILY_API_KEY'] == st.secrets['TAVILY_API_KEY'],
-    os.environ['NEO4J_URI'] == st.secrets['NEO4J_URI'],
-    os.environ['NEO4J_USERNAME'] == st.secrets['NEO4J_USERNAME'],
-    os.environ['NEO4J_PASSWORD'] == st.secrets['NEO4J_PASSWORD'],
-    os.environ['AURA_INSTANCEID'] == st.secrets['AURA_INSTANCEID'],
-    os.environ['AURA_INSTANCENAME'] == st.secrets['AURA_INSTANCENAME'],
-    )
-
-
 # Get the credentials from the environment variables
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 NEO4J_URI = os.getenv("NEO4J_URI")

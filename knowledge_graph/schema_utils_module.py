@@ -9,6 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Load environment variables from .env file
 load_dotenv()
 
+
 import os
 import streamlit as st
 #for deployment in streamlit cloud

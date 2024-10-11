@@ -19,7 +19,9 @@ using the Neo4jGraph API. Finally, it prints a message indicating the successful
 load_dotenv()
 
 # Get the credentials from the environment variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+# Retrieve OpenAI API Key from environment variables
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 NEO4J_URI = os.getenv("NEO4J_URI")
 NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
@@ -36,7 +38,7 @@ graph = Neo4jGraph(url=NEO4J_URI, username=NEO4J_USERNAME, password=NEO4J_PASSWO
 from langchain_openai import ChatOpenAI
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 
-llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", api_key=OPENAI_API_KEY)
+llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", api_key=openai_api_key)
 
 llm_transformer = LLMGraphTransformer(llm=llm)
 

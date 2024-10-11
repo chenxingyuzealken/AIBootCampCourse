@@ -6,11 +6,16 @@ from langchain.llms import OpenAI
 # Load environment variables from the .env file
 load_dotenv()
 
+import streamlit as st
 # Retrieve OpenAI API Key from environment variables
-openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 if not openai_api_key:
-    raise ValueError("Missing OpenAI API key. Set the OPENAI_API_KEY in your .env file.")
+    openai_api_key = input("Please enter your OpenAI API key: ")
+
+# Optionally, raise an error if the user does not provide a key
+if not openai_api_key:
+    raise ValueError("API key is required to proceed.")
 
 # Initialize LLM (OpenAI) using the API key
 llm = OpenAI(temperature=0, api_key=openai_api_key)

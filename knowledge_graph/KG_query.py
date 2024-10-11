@@ -10,7 +10,9 @@ import os
 load_dotenv()
 
 # Get the credentials from the environment variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+# Retrieve OpenAI API Key from environment variables
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 NEO4J_URI = os.getenv("NEO4J_URI")
 NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
@@ -26,7 +28,7 @@ schema_embeddings = schema_utils.create_schema_embeddings()
 graph = Neo4jGraph(url=NEO4J_URI, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
 
 # Set up the LLM (OpenAI GPT) for query processing
-llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", api_key=OPENAI_API_KEY)
+llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", api_key=openai_api_key)
 
 # Define a function to generate the Cypher query based on schema terms and node IDs
 def find_and_generate_cypher(question):

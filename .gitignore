@@ -1,0 +1,27 @@
+.env
+Neo4j-fed7af0a-Created-2024-10-06.txt
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# VS Code 
+.vscode/ 
+# PyCharm 
+.idea/
+
+
+# Streamlit
+.streamlit/secrets.toml

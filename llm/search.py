@@ -9,6 +9,17 @@ from langchain.llms import OpenAI
 # Load environment variables from the .env file
 load_dotenv()
 
+import os
+import streamlit as st
+#for deployment in streamlit cloud
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+os.environ['TAVILY_API_KEY'] = st.secrets['TAVILY_API_KEY']
+os.environ['NEO4J_URI'] = st.secrets['NEO4J_URI']
+os.environ['NEO4J_USERNAME'] = st.secrets['NEO4J_USERNAME']
+os.environ['NEO4J_PASSWORD'] = st.secrets['NEO4J_PASSWORD']
+os.environ['AURA_INSTANCEID'] = st.secrets['AURA_INSTANCEID']
+os.environ['AURA_INSTANCENAME'] = st.secrets['AURA_INSTANCENAME']
+
 # Retrieve API Keys from environment variables
 openai_api_key = os.getenv('OPENAI_API_KEY')
 tavily_api_key = os.getenv('TAVILY_API_KEY')

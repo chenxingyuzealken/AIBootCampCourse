@@ -37,6 +37,10 @@ Before you can run the application, make sure you have the following in place:
     ```
 
     You also need to get a Tavily API key (this is free)
+    You will also need a Neo4j Aura DB account to store the knowledge graphs used to query the informaiton
+
+4. **If you are accessing this via streamlit community clous**:
+    You will need the password to access that.
 
 ## Running the Application
 

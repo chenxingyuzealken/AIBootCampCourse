@@ -1,14 +1,36 @@
 import streamlit as st
-from policy_explainer import policy_explainer  # Import the policy explainer module
-from life_simulator import life_simulator  # Import the life simulator module
-from about_us import about_us
-from methodology import methodology
 
 from utility import check_password
 
 # Do not continue if check_password is not True.  
 if not check_password():  
     st.stop()
+
+# Function to check and get OPENAI_API_KEY from st.secrets or user input
+def get_openai_api_key():
+    # Check if the key is already available in st.secrets
+    if 'OPENAI_API_KEY' not in st.secrets:
+        st.warning("OPENAI_API_KEY is not found. Please enter your API key.")
+        # Create a text input for the user to provide the API key
+        openai_api_key = st.text_input("Enter your OPENAI_API_KEY:", type="password")
+        
+        # If the user has entered the key, proceed; otherwise, stop the app
+        if openai_api_key:
+            # Optionally, store the key in session state for this session
+            st.session_state['OPENAI_API_KEY'] = openai_api_key
+        else:
+            st.stop()
+    else:
+        # Use the key from st.secrets if it exists
+        st.session_state['OPENAI_API_KEY'] = st.secrets["OPENAI_API_KEY"]
+
+get_openai_api_key()
+
+
+from policy_explainer import policy_explainer  # Import the policy explainer module
+from life_simulator import life_simulator  # Import the life simulator module
+from about_us import about_us
+from methodology import methodology
 
 # Define a function for the Home page
 def home():
